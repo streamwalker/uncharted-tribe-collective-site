@@ -156,6 +156,30 @@
   footer a:hover{color:var(--cream)}
   .copyright{text-align:center;margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1.4rem;font-size:.72rem;color:#8b96a2}
 
+  /* Language selector */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .lang-wrap{display:flex;align-items:center}
+  .lang-sel{
+    appearance:none;-webkit-appearance:none;
+    background:rgba(10,14,19,.55);color:var(--cream);
+    border:1px solid var(--line);border-radius:2px;
+    font-family:inherit;font-size:.72rem;letter-spacing:.1em;
+    padding:.3rem 1.8rem .3rem .6rem;cursor:pointer;
+    background-image:linear-gradient(45deg,transparent 50%,var(--cream) 50%),linear-gradient(135deg,var(--cream) 50%,transparent 50%);
+    background-position:calc(100% - 12px) 52%,calc(100% - 7px) 52%;
+    background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    transition:border-color .25s,background-color .25s;
+  }
+  .lang-sel:hover{border-color:rgba(245,241,232,.4);background-color:rgba(10,14,19,.72)}
+  .lang-sel:focus-visible{outline:2px solid var(--accent-light);outline-offset:2px}
+  .lang-sel option{background:#12181f;color:var(--cream)}
+  [dir="rtl"] .lang-sel{padding:.3rem .6rem .3rem 1.8rem;background-position:12px 52%,17px 52%}
+  [dir="rtl"] .head-top{flex-direction:row-reverse}
+  [dir="rtl"] .util-icons{justify-content:flex-start}
+  [dir="rtl"] .id-card .band{flex-direction:row-reverse}
+  [dir="rtl"] .foot-grid{direction:rtl}
+
   /* Motion */
   @keyframes pageIn{from{opacity:0}to{opacity:1}}
   body{animation:pageIn .9s ease both}
@@ -204,81 +228,81 @@
   <div class="mark"><img src="web-assets/utc-logo-light.png" alt=""></div>
 </div>
 
-<div class="util">Complimentary shipping for Tribe members. <a href="index.html#newsletter">Sign In or Join the Tribe</a></div>
+<div class="util"><span data-i18n="util_ship">Complimentary shipping for Tribe members.</span> <a href="index.html#newsletter" data-i18n="util_join">Sign In or Join the Tribe</a></div>
 
 <header>
   <div class="head-top">
-    <a href="#">US / English</a>
-    <a href="index.html#archive">The Archive</a>
+    <div class="lang-wrap"><label for="langSel" class="sr-only" data-i18n="lang_label">Language</label><select id="langSel" class="lang-sel" data-i18n-aria="lang_label" aria-label="Language"></select></div>
+    <a href="index.html#archive" data-i18n="nav_archive">The Archive</a>
   </div>
   <div class="head-main">
-    <div style="font-size:.76rem;letter-spacing:.12em;text-transform:uppercase"><a href="https://uncharted-tribe-collective.myshopify.com/search">Search</a></div>
+    <div style="font-size:.76rem;letter-spacing:.12em;text-transform:uppercase"><a href="https://uncharted-tribe-collective.myshopify.com/search" data-i18n="search">Search</a></div>
     <div class="logo"><a href="index.html" aria-label="Uncharted Tribe Collective home"><img src="web-assets/utc-logo-light.png" alt="Uncharted Tribe Collective"></a></div>
     <div class="util-icons">
-      <a href="https://uncharted-tribe-collective.myshopify.com/account">Account</a>
-      <a href="https://uncharted-tribe-collective.myshopify.com/cart">Cart</a>
+      <a href="https://uncharted-tribe-collective.myshopify.com/account" data-i18n="account">Account</a>
+      <a href="https://uncharted-tribe-collective.myshopify.com/cart" data-i18n="cart">Cart</a>
     </div>
   </div>
   <nav class="primary">
     <ul>
-      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/outdoor-explorer">Men</a></li>
-      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/coastal-tribe">Women</a></li>
-      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/global-nomad">Unisex</a></li>
-      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/all">Collections</a></li>
-      <li><a href="find-your-tribe.html" class="here">Find Your Tribe</a></li>
-      <li><a href="index.html#onedegree">Discover</a></li>
+      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/outdoor-explorer" data-i18n="nav_men">Men</a></li>
+      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/coastal-tribe" data-i18n="nav_women">Women</a></li>
+      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/global-nomad" data-i18n="nav_unisex">Unisex</a></li>
+      <li><a href="https://uncharted-tribe-collective.myshopify.com/collections/all" data-i18n="nav_collections">Collections</a></li>
+      <li><a href="find-your-tribe.html" class="here" data-i18n="nav_fyt">Find Your Tribe</a></li>
+      <li><a href="index.html#onedegree" data-i18n="nav_discover">Discover</a></li>
     </ul>
   </nav>
 </header>
 
 <!-- Intro -->
 <div class="intro glass reveal">
-  <div class="eyebrow">The Route Is Personal</div>
-  <h1>Tell Us How You Wander</h1>
-  <p>We will never tell you where to go. That is the entire distinction, and it is load-bearing. These are eight ways members already move through the world — find the one that sounds like yours, and we'll point you to the drops built for it.</p>
+  <div class="eyebrow" data-i18n="intro_eyebrow">The Route Is Personal</div>
+  <h1 data-i18n="intro_h1">Tell Us How You Wander</h1>
+  <p data-i18n="intro_p">We will never tell you where to go. That is the entire distinction, and it is load-bearing. These are eight ways members already move through the world — find the one that sounds like yours, and we'll point you to the drops built for it.</p>
 </div>
 
 <!-- Identity grid -->
 <section class="identities">
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/outdoor-explorer">
     <img src="web-assets/art/id-hiker.jpg" alt="The Hiker — built for more than the summit">
-    <div class="band"><span class="col">Outdoor Explorer</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_outdoor">Outdoor Explorer</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/coastal-tribe">
     <img src="web-assets/art/id-surf.jpg" alt="Surf and coastal — chase waves, find freedom">
-    <div class="band"><span class="col">Coastal Tribe</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_coastal">Coastal Tribe</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/global-nomad">
     <img src="web-assets/art/id-global.jpg" alt="The Global Explorer in the city">
-    <div class="band"><span class="col">Global Nomad</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_nomad">Global Nomad</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/outdoor-explorer">
     <img src="web-assets/art/id-camper.jpg" alt="The Camper and Van-Lifer at the fire">
-    <div class="band"><span class="col">Outdoor Explorer</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_outdoor">Outdoor Explorer</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/coastal-tribe">
     <img src="web-assets/art/id-beach.jpg" alt="Beach-goers on the shore">
-    <div class="band"><span class="col">Coastal Tribe</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_coastal">Coastal Tribe</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/global-nomad">
     <img src="web-assets/art/id-nomad.jpg" alt="The Jet-Setter in the terminal">
-    <div class="band"><span class="col">Global Nomad</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_nomad">Global Nomad</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/outdoor-explorer">
     <img src="web-assets/art/id-park.jpg" alt="The Park Explorer above the lake">
-    <div class="band"><span class="col">Outdoor Explorer</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_outdoor">Outdoor Explorer</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
   <a class="id-card reveal" href="https://uncharted-tribe-collective.myshopify.com/collections/outdoor-explorer">
     <img src="web-assets/art/id-runner.jpg" alt="The Trail Runner on the coast ridge">
-    <div class="band"><span class="col">Outdoor Explorer</span><span class="cta">Shop Now</span></div>
+    <div class="band"><span class="col" data-i18n="col_outdoor">Outdoor Explorer</span><span class="cta" data-i18n="shop_now">Shop Now</span></div>
   </a>
 </section>
 
 <!-- Article note -->
 <section class="note glass reveal">
-  <blockquote>"The route is personal; the direction is shared. We will never tell you where to go. We will only insist that you go somewhere no one selected for you."</blockquote>
-  <div class="src">Article VII — The Founding Charter</div>
-  <div><a class="cta" href="index.html#onedegree">Start with One Degree</a></div>
+  <blockquote data-i18n="quote">"The route is personal; the direction is shared. We will never tell you where to go. We will only insist that you go somewhere no one selected for you."</blockquote>
+  <div class="src" data-i18n="quote_src">Article VII — The Founding Charter</div>
+  <div><a class="cta" href="index.html#onedegree" data-i18n="cta_onedegree">Start with One Degree</a></div>
 </section>
 
 <!-- Footer -->
@@ -286,19 +310,19 @@
   <div class="foot-grid">
     <div>
       <img src="web-assets/utc-logo-light.png" alt="Uncharted Tribe Collective" style="width:190px;height:auto;margin-bottom:1rem">
-      <p>We exist to turn the impulse to wander into the capacity to choose.</p>
+      <p data-i18n="foot_tagline">We exist to turn the impulse to wander into the capacity to choose.</p>
     </div>
     <div>
-      <h4>The Collective</h4>
+      <h4 data-i18n="foot_collective">The Collective</h4>
       <ul>
-        <li><a href="index.html#onedegree">The Articles</a></li>
-        <li><a href="index.html#archive">The Archive</a></li>
-        <li><a href="index.html#onedegree">One Degree Off</a></li>
-        <li><a href="#">Field Notes</a></li>
+        <li><a href="index.html#onedegree" data-i18n="foot_articles">The Articles</a></li>
+        <li><a href="index.html#archive" data-i18n="nav_archive">The Archive</a></li>
+        <li><a href="index.html#onedegree" data-i18n="foot_onedegree">One Degree Off</a></li>
+        <li><a href="#" data-i18n="foot_fieldnotes">Field Notes</a></li>
       </ul>
     </div>
     <div>
-      <h4>Follow</h4>
+      <h4 data-i18n="foot_follow">Follow</h4>
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">TikTok</a></li>
@@ -307,7 +331,7 @@
       </ul>
     </div>
   </div>
-  <div class="copyright">© 2026 Uncharted Tribe Collective · Go Where No One Assigned You.</div>
+  <div class="copyright" data-i18n="copyright">© 2026 Uncharted Tribe Collective · Go Where No One Assigned You.</div>
 </footer>
 
 <script>
@@ -358,5 +382,6 @@
 })();
 </script>
 
+<script src="web-assets/i18n.js"></script>
 </body>
 </html>
