@@ -1,0 +1,54 @@
+/* Shared shell for the plain document pages — support, app privacy.
+   Deliberately separate from the campaign pages' inline CSS: these are read,
+   not browsed, so they get a single measured column and nothing that moves. */
+
+:root{
+  --ink:#1c2733;
+  --ink-deep:#12181f;
+  --cream:#f5f1e8;
+  --paper:#fdfcf9;
+  --accent:#d51816;      /* UTC logo red */
+  --accent-dark:#a90f0d;
+  --muted:#6b7683;
+  --line:#e6e1d6;
+  --serif:Georgia,'Times New Roman',serif;
+  --sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accent-dark)}
+
+.doc-head{border-bottom:1px solid var(--line);background:var(--paper)}
+.doc-logo{display:block;max-width:1400px;margin:0 auto;padding:1.1rem 1.5rem}
+.doc-logo img{height:64px;width:auto}
+
+.doc{max-width:44rem;margin:0 auto;padding:3.5rem 1.5rem 5rem}
+.doc .eyebrow{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-dark)}
+.doc h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.02em;margin:.5rem 0 1.1rem}
+.doc h2{font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:.02em;margin:3rem 0 .4rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.doc h3{font-size:.92rem;letter-spacing:.02em;margin:1.8rem 0 .3rem}
+.doc p{margin:.7rem 0}
+.doc .lede{font-size:1.06rem;color:var(--muted)}
+.doc ul{margin:.7rem 0 .7rem 1.2rem}
+.doc li{margin:.25rem 0}
+.doc ul.links{list-style:none;margin-left:0}
+.doc ul.links li{margin:.4rem 0}
+.doc .updated{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+.doc .note{background:var(--cream);border-left:2px solid var(--accent);padding:1rem 1.2rem;margin:1.4rem 0;font-size:.93rem}
+
+.cta-row{margin:1.8rem 0 .5rem}
+.cta{display:inline-block;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;padding:.75rem 1.6rem;background:var(--ink);color:var(--cream);text-decoration:none;transition:background .25s}
+.cta:hover{background:var(--accent-dark);color:var(--cream)}
+
+.doc-foot{background:var(--ink-deep);color:#aeb7c0;font-size:.82rem;padding:2.6rem 1.5rem;text-align:center}
+.doc-foot a{margin:0 .8rem;color:var(--cream)}
+.doc-foot .copyright{margin-top:1.4rem;font-size:.74rem;color:#6c7883}
+
+@media(max-width:520px){
+  .doc-logo img{height:52px}
+  .doc{padding-top:2.5rem}
+  .doc-foot a{display:inline-block;margin:.3rem .7rem}
+}

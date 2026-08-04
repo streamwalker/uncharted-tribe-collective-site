@@ -6,3 +6,11 @@
 # type. Stated explicitly so it does not depend on browser leniency.
 /site.webmanifest
   Content-Type: application/manifest+json
+
+# The association file has no extension, so nothing infers a type for it. iOS
+# fetches this once at install time and will not parse it unless it arrives as
+# JSON — and there is no error surfaced when it doesn't, universal links simply
+# never fire. It must also be served unsigned, uncompressed and without a
+# redirect, which is why it lives at the real path rather than behind a rule.
+/.well-known/apple-app-site-association
+  Content-Type: application/json

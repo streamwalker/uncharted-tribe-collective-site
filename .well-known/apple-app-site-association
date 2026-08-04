@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["32N9W9HZ54.com.unchartedtribecollective.app"],
+        "components": [
+          { "/": "/products/*",    "comment": "Product detail" },
+          { "/": "/collections/*", "comment": "Release detail" },
+          { "/": "/releases",      "comment": "Releases tab" },
+          { "/": "/past-runs",     "comment": "Past Runs tab" },
+          { "/": "/collective",    "comment": "The Collective tab" },
+          { "/": "/cart",          "comment": "Cart" }
+        ]
+      }
+    ]
+  }
+}
