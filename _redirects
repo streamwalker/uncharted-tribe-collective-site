@@ -1,0 +1,21 @@
+# Netlify reads this file from the publish root.
+#
+# These paths exist so a shared link resolves for everyone. On a device with
+# the app installed, iOS matches the URL against the association file and opens
+# the app directly — these rules never run. Everywhere else the same URL has to
+# land somewhere real, so it forwards to the store.
+#
+# 302, not 301: the store lives on myshopify.com today. A permanent redirect
+# would be cached by browsers and become very hard to take back once these
+# paths are served natively.
+#
+# Deliberately no catch-all. A `/* /index.html 200` rule would swallow
+# /.well-known/apple-app-site-association, and universal links fail silently
+# when that file returns HTML — nothing is logged, they simply stop working.
+
+/products/*     https://uncharted-tribe-collective.myshopify.com/products/:splat     302
+/collections/*  https://uncharted-tribe-collective.myshopify.com/collections/:splat  302
+/cart           https://uncharted-tribe-collective.myshopify.com/cart                302
+/releases       https://uncharted-tribe-collective.myshopify.com/collections/all     302
+/past-runs      https://uncharted-tribe-collective.myshopify.com/collections/all     302
+/collective     /find-your-tribe.html                                                302
